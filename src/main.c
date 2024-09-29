@@ -1,27 +1,25 @@
 /*implement basic commands
- * default lists all the commands available forf linux in the defaul file
+ * default lists all the commands available forf linux in the default file
  * add more features later
+ * implement a help page,, man commands
  */
 
 /*import*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*define variables */
 #define DEFAULT_LINUX_PATH "linux"
 
-/*structs*/
-struct Data {
-  char command[20];
-  char description[100];
-};
-
 /*declarations*/
 void handle_default_case(void);
 void read_from_linux_file(void);
+void handle_commands(int argc, char** argv);
 
 /*main function
  * entry point to the program
+ * command options -l
  */
 int main(int argc, char** argv) {
   switch (argc) {
@@ -29,11 +27,11 @@ int main(int argc, char** argv) {
       handle_default_case();
       break;
     case 2:
-      printf("Yet to be implemented;\n");
+      handle_commands(argc, argv);
       break;
     default:
-      printf("Yet to be implemented;\n");
-      break;
+      perror("Too Many Arguments\n");
+      return 1;
   }
   return 0;
 }
@@ -76,4 +74,19 @@ void read_from_linux_file(void) {
   free(linux_file_contents);
   fclose(linux_file);
   return;
+}
+
+void handle_commands(int argc, char** argv) {
+  if (argc > 2) {
+    perror("Too many Arguments\n");
+    return;
+  }
+
+  if (!strcmp(argv[1], "-l")) {
+    handle_default_case();
+    return;
+  } else {
+    perror("Wrong Argument\n");
+    return;
+  }
 }
