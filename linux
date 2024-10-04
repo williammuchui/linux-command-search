@@ -2,7 +2,13 @@
 [apt-get] Package management for Debian-based systems
 [at] Schedule commands to run once at a particular time
 [awk] Pattern scanning and text processing language
+
 [bg] Send jobs to the background
+[basename] Strip directory and suffix from filenames
+[bc] An arbitrary precision calculator language
+[break] Exit from a loop
+[bzip2] Compress files using the Burrows-Wheeler block sorting text compression algorithm
+
 [cal] Display a calendar
 [cat] Display the contents of a file
 [cd] Change the current directory
@@ -12,57 +18,128 @@
 [cron] Schedule commands to run periodically
 [curl] Transfer data from or to a server
 [cut] Remove sections from each line of files
+[cal] Display a calendar
+[case] Execute commands based on matching patterns
+[chgrp] Change group ownership
+[chsh] Change the login shell
+[cksum] Print CRC checksum and byte counts
+[cmp] Compare two files byte by byte
+[comm] Compare two sorted files line by line
+[cpio] Copy files to and from archives
+
 [date] Display or set the system date and time
-[df] Display disk space usage
+[dc] Desk calculator
+[dd] Convert and copy a file
+[df] Display file system disk space usage
 [diff] Compare files line by line
+[diff3] Compare three files
 [du] Estimate file and directory space usage
+[date] Display or set the system date and time
+
 [echo] Display a line of text
+[ed] Line editor
+[expr] Evaluate expressions
+
 [fg] Bring jobs to the foreground
-[find] Search for files and directories
-[free] Display amount of free and used memory
+[fgrep] Search files for lines that match a fixed string
+[file] Determine file type
+[find] Search for files in a directory hierarchy
+[fold] Wrap each input line to fit in specified width
+[format] Format disks
+[free] Display the amount of free and used memory in the system
+
 [grep] Search for patterns in files
 [gzip] Compress or decompress files
+[gunzip] Decompress files compressed by gzip
+
 [head] Display the first few lines of a file
 [history] View command history
+
 [ifconfig] Configure network interfaces
 [iptables] Configure firewall rules
+[iconv] Convert text from one character encoding to another
+[install] Copy files and set attributes
+
 [jobs] List active jobs
+[join] Join lines of two files on a common field
+
 [kill] Terminate a process
+
 [last] Show listing of last logged in users
 [less] View file contents one page at a time
 [ln] Create links between files
 [ls] List files and directories in the current directory
+[link] Create a hard link to a file
+[lsattr] List file attributes on a Linux second extended file system
+[lsmod] Show the status of modules in the Linux kernel
+[lsof] List open files
+
 [man] Display the manual page for a command
 [mkdir] Create a new directory
 [mv] Move or rename files or directories
+[man] Format and display the manual pages
+[md5sum] Calculate MD5 checksums
+[mktemp] Create a temporary file or directory
+
 [netstat] Display network connections and statistics
+[nano] Simple text editor
+[nm] List symbols from object files
+[nohup] Run a command immune to hangups
+
+[od] Dump files in octal and other formats
+
 [passwd] Change user password
-[ping] Test network connectivity
 [ps] Display information about running processes
 [pwd] Print the current working directory
+[ping] Send ICMP ECHO_REQUEST to network hosts
+[pushd] Save and change the current directory
+[popd] Restore the previous value of the current directory
+
 [reboot] Reboot the system
 [rm] Remove files or directories
 [rmdir] Remove an empty directory
 [rsync] Synchronize files and directories between locations
+[read] Read a line from standard input
+
 [scp] Securely copy files between hosts
 [sed] Stream editor for filtering and transforming text
 [shutdown] Shutdown or restart the system
 [sort] Sort lines of text
-[ssh] Secure shell remote login
 [su] Switch user or become superuser
 [sudo] Execute a command as another user, typically superuser
+[sh] Shell command interpreter
+[split] Split a file into pieces
+[ssh] OpenSSH SSH client (remote login program)
+
 [tail] Display the last few lines of a file
 [tar] Create or extract archive files
 [tee] Read from standard input and write to standard output and files
 [top] Display and manage the top CPU processes
 [touch] Create an empty file or update file timestamps
+[time] Measure the time taken to execute a command
+[tr] Translate or delete characters
+
 [uname] Display system information
 [uniq] Report or omit repeated lines
 [useradd] Create a new user account
+[usermod] Modify a user account
+
+[vi] Text editor
+[vim] Improved version of the vi editor
+
 [w] Show who is logged on and what they are doing
+[watch] Execute a program periodically
 [wc] Print newline, word, and byte counts for files
 [wget] Download files from the web
 [who] Show who is logged on
+[who] Show who is logged on
 [whoami] Display current user name
+
 [xargs] Build and execute command lines from standard input
+
 [yum] Package management for Red Hat-based systems
+
+[zip] Package and compress (archive) files
+[zcat] View compressed files
+[zgrep] Search files in a compressed format
+[zless] View compressed files with paging
