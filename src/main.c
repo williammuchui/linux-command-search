@@ -35,7 +35,11 @@ void read_from_linux_file(void) {
 
   char line[MAX_LINE_LENGTH];
   while (fgets(line, sizeof(line), linux_file)) {
-    printf("%s", line);
+    /*format the output*/
+    char *command = strtok(line, " ");
+    char *description = strtok(NULL, "\n");
+
+    printf("%s\t%s\n", command, description);
   }
 
   if (ferror(linux_file)) {
@@ -64,7 +68,9 @@ void search_commands(const char *query) {
   int found = 0;
   while (fgets(line, sizeof(line), linux_file)) {
     if (strcasestr(line, query) != 0) {
-      printf("%s", line);
+      char *command = strtok(line, " ");
+      char *description = strtok(NULL, "\n");
+      printf("%s\t%s\n", command, description);
       found = 1;
     }
   }

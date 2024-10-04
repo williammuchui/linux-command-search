@@ -1,3 +1,68 @@
-[ls] List files in a directory
-[cp] Copy files from source to destination
-[mv] Move files from source to destination
+[alias] Create command aliases
+[apt-get] Package management for Debian-based systems
+[at] Schedule commands to run once at a particular time
+[awk] Pattern scanning and text processing language
+[bg] Send jobs to the background
+[cal] Display a calendar
+[cat] Display the contents of a file
+[cd] Change the current directory
+[chmod] Change file permissions
+[chown] Change file ownership
+[cp] Copy files or directories
+[cron] Schedule commands to run periodically
+[curl] Transfer data from or to a server
+[cut] Remove sections from each line of files
+[date] Display or set the system date and time
+[df] Display disk space usage
+[diff] Compare files line by line
+[du] Estimate file and directory space usage
+[echo] Display a line of text
+[fg] Bring jobs to the foreground
+[find] Search for files and directories
+[free] Display amount of free and used memory
+[grep] Search for patterns in files
+[gzip] Compress or decompress files
+[head] Display the first few lines of a file
+[history] View command history
+[ifconfig] Configure network interfaces
+[iptables] Configure firewall rules
+[jobs] List active jobs
+[kill] Terminate a process
+[last] Show listing of last logged in users
+[less] View file contents one page at a time
+[ln] Create links between files
+[ls] List files and directories in the current directory
+[man] Display the manual page for a command
+[mkdir] Create a new directory
+[mv] Move or rename files or directories
+[netstat] Display network connections and statistics
+[passwd] Change user password
+[ping] Test network connectivity
+[ps] Display information about running processes
+[pwd] Print the current working directory
+[reboot] Reboot the system
+[rm] Remove files or directories
+[rmdir] Remove an empty directory
+[rsync] Synchronize files and directories between locations
+[scp] Securely copy files between hosts
+[sed] Stream editor for filtering and transforming text
+[shutdown] Shutdown or restart the system
+[sort] Sort lines of text
+[ssh] Secure shell remote login
+[su] Switch user or become superuser
+[sudo] Execute a command as another user, typically superuser
+[tail] Display the last few lines of a file
+[tar] Create or extract archive files
+[tee] Read from standard input and write to standard output and files
+[top] Display and manage the top CPU processes
+[touch] Create an empty file or update file timestamps
+[uname] Display system information
+[uniq] Report or omit repeated lines
+[useradd] Create a new user account
+[w] Show who is logged on and what they are doing
+[wc] Print newline, word, and byte counts for files
+[wget] Download files from the web
+[who] Show who is logged on
+[whoami] Display current user name
+[xargs] Build and execute command lines from standard input
+[yum] Package management for Red Hat-based systems

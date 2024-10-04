@@ -1,55 +1,77 @@
-# Commands
+# Linux Command Search
 
-Commands is a simple command-line tool that lists all available Linux commands
-directly in your terminal. It's designed to help users quickly discover and
-explore the commands they can use in their Linux environment.
+## Description
 
-## Table of Contents
-
-* [Features](#features)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [License](#license)
+This project provides a simple command-line tool for searching and displaying Linux commands. It allows users to view a full list of common Linux commands or search for specific commands using keywords.
 
 ## Features
 
-Displays a comprehensive list of all available Linux commands.
-Simple and intuitive command-line interface.
-Supports filtering and searching for specific commands (future enhancement).
+- Display a full list of common Linux commands
+- Search for commands using case-insensitive keyword matching
+- Easy-to-use command-line interface
+
+## Requirements
+
+- C compiler (e.g., gcc)
+- Standard C libraries
 
 ## Installation
 
-I'm yet to implement this section
+1. Clone the repository or download the source code.
+2. Compile the program using a C compiler:
+   ```
+   gcc -o linux_command_search main.c
+   ```
 
 ## Usage
 
-To use the commands tool, simply run:
+The program can be used in three ways:
 
-```bash
-commands
+1. Display all commands:
+
+   ```
+   ./linux_command_search
+   ```
+
+   or
+
+   ```
+   ./linux_command_search -l
+   ```
+
+2. Search for a specific command:
+   ```
+   ./linux_command_search -s <keyword>
+   ```
+   Replace `<keyword>` with the term you want to search for.
+
+## File Structure
+
+- `src/main.c`: The main source code file containing the program logic
+- `linux`: A text file containing the list of Linux commands and their descriptions
+
+## How It Works
+
+- The program reads the list of commands from `linux`.
+- When searching, it uses a case-insensitive search algorithm to match the keyword against command names and descriptions.
+- Results are displayed in the terminal.
+
+## Customization
+
+You can easily add or modify commands by editing the `linux` file. Each line should follow this format:
+
 ```
-
-This will display a list of all available Linux commands in your terminal.  
-Example Output
-
-```bash
-Available Linux Commands:
-1. ls - List directory contents
-2. cd - Change directory
-3. cp - Copy files and directories
+[command_name] Command description
 ```
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, please fork the repository and submit a pull request.
-
-* Fork the project.
-* Create a feature branch (git checkout -b feature/YourFeature).
-* Commit your changes (git commit -m 'Add some feature').
-* Push to the branch (git push origin feature/YourFeature).
-* Open a pull request.
+Contributions to improve the program or expand the command list are welcome. Please submit a pull request or open an issue to discuss proposed changes.
 
 ## License
 
-This project is licensed under the GPL-3.0 License. See the [LICENSE](license) file for more details.
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Contact
+
+For any questions or suggestions, please open an issue in the project repository.
