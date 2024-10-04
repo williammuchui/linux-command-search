@@ -1,92 +1,90 @@
-/*implement basic commands
- * default lists all the commands available forf linux in the default file
- * add more features later
- * implement a help page,, man commands
- */
-
-/*import*/
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-/*define variables */
 #define DEFAULT_LINUX_PATH "linux"
+#define MAX_LINE_LENGTH 256
 
-/*declarations*/
 void handle_default_case(void);
 void read_from_linux_file(void);
-void handle_commands(int argc, char** argv);
+void handle_commands(int argc, char **argv);
+void search_commands(const char *query);
+int strcasestr(const char *haystack, const char *needle);
 
-/*main function
- * entry point to the program
- * command options -l
- */
-int main(int argc, char** argv) {
-  switch (argc) {
-    case 1:
-      handle_default_case();
-      break;
-    case 2:
-      handle_commands(argc, argv);
-      break;
-    default:
-      perror("Too Many Arguments\n");
-      return 1;
+int main(int argc, char **argv) {
+  if (argc == 1) {
+    handle_default_case();
+  } else if (argc == 2) {
+    handle_commands(argc, argv);
+  } else if (argc == 3 && strcmp(argv[1], "-s") == 0) {
+    search_commands(argv[2]);
+  } else {
+    fprintf(stderr, "Usage: %s [-l | search <query>]\n", argv[0]);
+    return 1;
   }
   return 0;
 }
 
-void handle_default_case() {
-  /*read from default linux file*/
-  read_from_linux_file();
-}
+void handle_default_case() { read_from_linux_file(); }
 
 void read_from_linux_file(void) {
-  FILE* linux_file = fopen(DEFAULT_LINUX_PATH, "r");
+  FILE *linux_file = fopen(DEFAULT_LINUX_PATH, "r");
   if (!linux_file) {
-    perror("Error opening linux file!\n");
+    perror("Error opening linux file");
     return;
   }
 
-  fseek(linux_file, 0, SEEK_END);
-  long linux_file_size = ftell(linux_file);
-  fseek(linux_file, 0, SEEK_SET);
-
-  /*allocate memory*/
-  char* linux_file_contents = (char*)malloc(linux_file_size + 1);
-  if (!linux_file_contents) {
-    perror("Memory allocation for linux file contents failed;\n");
-    fclose(linux_file);
-    return;
+  char line[MAX_LINE_LENGTH];
+  while (fgets(line, sizeof(line), linux_file)) {
+    printf("%s", line);
   }
 
-  size_t bytes_read_from_linux_file =
-      fread(linux_file_contents, 1, linux_file_size, linux_file);
   if (ferror(linux_file)) {
-    perror("Error reading linux file contents;\n");
-    free(linux_file_contents);
-    fclose(linux_file);
-    return;
+    perror("Error reading linux file contents");
   }
 
-  linux_file_contents[linux_file_size] = '\0';
-  printf("%s", linux_file_contents);
-  free(linux_file_contents);
   fclose(linux_file);
-  return;
 }
 
-void handle_commands(int argc, char** argv) {
-  if (argc > 2) {
-    perror("Too many Arguments\n");
+void handle_commands(int argc, char **argv) {
+  if (strcmp(argv[1], "-l") == 0) {
+    handle_default_case();
+  } else {
+    fprintf(stderr, "Error: Unknown argument\n");
+  }
+}
+
+void search_commands(const char *query) {
+  FILE *linux_file = fopen(DEFAULT_LINUX_PATH, "r");
+  if (!linux_file) {
+    perror("Error opening linux file");
     return;
   }
 
-  if (!strcmp(argv[1], "-l")) {
-    handle_default_case();
-    return;
-  } else {
-    perror("Wrong Argument\n");
-    return;
+  char line[MAX_LINE_LENGTH];
+  int found = 0;
+  while (fgets(line, sizeof(line), linux_file)) {
+    if (strcasestr(line, query) != 0) {
+      printf("%s", line);
+      found = 1;
+    }
   }
+
+  if (!found) {
+    printf("No commands found matching: %s\n", query);
+  }
+
+  fclose(linux_file);
+}
+
+// Case-insensitive substring search implementation
+int strcasestr(const char *haystack, const char *needle) {
+  size_t needle_len = strlen(needle);
+  size_t haystack_len = strlen(haystack);
+
+  for (size_t i = 0; i <= haystack_len - needle_len; i++) {
+    if (strncasecmp(haystack + i, needle, needle_len) == 0) {
+      return 1;
+    }
+  }
+  return 0;
 }
