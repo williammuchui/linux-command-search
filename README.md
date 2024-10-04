@@ -20,7 +20,7 @@ This project provides a simple command-line tool for searching and displaying Li
 1. Clone the repository or download the source code.
 2. Compile the program using a C compiler:
    ```
-   gcc -o linux_command_search main.c
+   gcc -o commands src/main.c
    ```
 
 ## Usage
@@ -30,18 +30,18 @@ The program can be used in three ways:
 1. Display all commands:
 
    ```
-   ./linux_command_search
+   ./commands
    ```
 
    or
 
    ```
-   ./linux_command_search -l
+   ./commands -l
    ```
 
 2. Search for a specific command:
    ```
-   ./linux_command_search -s <keyword>
+   ./commands -s <keyword>
    ```
    Replace `<keyword>` with the term you want to search for.
 
