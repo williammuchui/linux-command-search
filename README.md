@@ -12,20 +12,61 @@ This project provides a simple command-line tool for searching and displaying Li
 
 ## Requirements
 
-- C compiler (e.g., gcc)
-- Standard C libraries
+- GCC (GNU Compiler Collection)
+- Make
 
 ## Installation
 
-1. Clone the repository or download the source code.
-2. Compile the program using a C compiler:
+### Downloading the Source Code
+
+1. Clone the repository:
+
    ```
-   gcc -o commands src/main.c
+   git clone https://github.com/williammuchui/linux-command-search.git
    ```
+
+2. Navigate to the project directory:
+   ```
+   cd linux-command-search
+   ```
+
+### Building the Project
+
+The project uses a Makefile to simplify the build process. Follow these steps to build the project:
+
+1. Compile the program:
+
+   ```
+   make
+   ```
+
+   This will create the `commands` executable in the project root directory.
+
+2. (Optional) Install the program system-wide:
+   ```
+   sudo make install
+   ```
+   This will copy the `commands` executable to `/usr/local/bin`, making it accessible from anywhere in the system.
+
+### Cleaning Up
+
+If you need to clean the build files:
+
+```
+make clean
+```
+
+### Uninstalling
+
+If you've installed the program system-wide and want to remove it:
+
+```
+sudo make uninstall
+```
 
 ## Usage
 
-The program can be used in three ways:
+After building (and optionally installing) the program, you can use it in the following ways:
 
 1. Display all commands:
 
@@ -33,15 +74,19 @@ The program can be used in three ways:
    ./commands
    ```
 
-   or
+   or if installed system-wide:
 
    ```
-   ./commands -l
+   commands
    ```
 
 2. Search for a specific command:
    ```
    ./commands -s <keyword>
+   ```
+   or if installed system-wide:
+   ```
+   commands -s <keyword>
    ```
    Replace `<keyword>` with the term you want to search for.
 
@@ -49,10 +94,13 @@ The program can be used in three ways:
 
 - `src/main.c`: The main source code file containing the program logic
 - `linux`: A text file containing the list of Linux commands and their descriptions
+- `Makefile`: Used for building and managing the project
+- `README.md`: This file, containing project documentation
+- `LICENSE`: The license file for the project
 
 ## How It Works
 
-- The program reads the list of commands from `linux`.
+- The program reads the list of commands from the `linux` file.
 - When searching, it uses a case-insensitive search algorithm to match the keyword against command names and descriptions.
 - Results are displayed in the terminal.
 
