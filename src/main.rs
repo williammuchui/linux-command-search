@@ -58,7 +58,29 @@ fn read_file(filepath: &str) -> Option<String> {
 }
 
 fn handle_search_argument(needle: &str) {
-    println!("{needle}");
+    let haystack;
+    match read_file(&LINUX_FILE_PATH) {
+        Some(c) => {
+            haystack = c;
+        }
+        None => {
+            return;
+        }
+    }
+
+    let found = haystack
+        .lines()
+        .filter_map(|line| {
+            if line.contains(needle) {
+                Some(line)
+            } else {
+                None
+            }
+        })
+        .collect::<Vec<&str>>();
+    for line in found {
+        print_contents(&line);
+    }
     return;
 }
 
