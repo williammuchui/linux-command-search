@@ -71,7 +71,7 @@ fn handle_search_argument(needle: &str) {
     let found = haystack
         .lines()
         .filter_map(|line| {
-            if line.contains(needle) {
+            if line.to_lowercase().contains(&needle.to_lowercase()) {
                 Some(line)
             } else {
                 None
