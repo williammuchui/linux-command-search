@@ -10,7 +10,7 @@ explore the commands they can use in their Linux environment.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Customization](#customization)
-- [Contributions](#contributions)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -40,8 +40,16 @@ I'm yet to implement this section
 
 To use the commands tool, simply run:
 
+To List all available commands
+
 ```bash
 commands
+```
+
+OR
+
+```bash
+commands -l
 ```
 
 This will display a list of all available Linux commands in your terminal.  
@@ -60,16 +68,10 @@ You can easily add or modify commands by editing the `linux` file. Each line sho
 
 [command_name] Command description
 
-## Contributions
+## Contributing
 
 Contributions are welcome! If you have suggestions for improvements or new features,
 please fork the repository and submit a pull request.
-
-- Fork the project.
-- Create a feature branch (git checkout -b feature/YourFeature).
-- Commit your changes (git commit -m 'Add some feature').
-- Push to the branch (git push origin feature/YourFeature).
-- Open a pull request.
 
 ## License
 
