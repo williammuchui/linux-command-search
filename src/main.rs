@@ -9,8 +9,9 @@ fn main() {
     let arguments: Vec<String> = args().collect();
     match arguments.as_slice() {
         [_] => handle_list_argument(),
-        [_, arg] if arg == "-l" => handle_list_argument(),
-        [_, arg, needle] if arg == "-s" => handle_search_argument(needle),
+        [_, arg] if arg == "-l" || arg == "--list" => handle_list_argument(),
+        [_, arg, needle] if arg == "-s" || arg == "--search" => handle_search_argument(needle),
+        [_, arg] if arg == "-h" => print_help(),
         _ => print_help(),
     }
 }
@@ -54,7 +55,10 @@ fn handle_search_argument(needle: &str) {
 }
 
 fn print_help() {
-    println!("Usage [command] [arguments]");
+    println!("Commands: Display and Search through linux commandline commands");
+    println!("Usage [-l] [-s <args>] ");
+    println!("-l , --list\n\tList all available commands");
+    println!("-s , --search <arg>\n\tSearch for argument in commands");
 }
 
 fn exit_with_error(e: &str) {
