@@ -1,5 +1,12 @@
+[?]         A single character wildcard
+[*]         Any character pr set of characters wildcard
+[[ ]]       Any character in the set wildcard
+[rwx]       Read, Write, Execute
+
 [alias]     Create command aliases
 [apt-get]   Package management for Debian-based systems
+[apropos]   Search manual pages for a keyword
+[aspell]    Spelling check for a file
 [at]        Schedule commands to run once at a particular time
 [awk]       Pattern scanning and text processing language
 
@@ -20,9 +27,11 @@
 [cut]       Remove sections from each line of files
 [cal]       Display a calendar
 [case]      Execute commands based on matching patterns
+[chfn]      Change personal finger information
 [chgrp]     Change group ownership
 [chsh]      Change the login shell
 [cksum]     Print CRC checksum and byte counts
+[clear]     Clear the screen
 [cmp]       Compare two files byte by byte
 [comm]      Compare two sorted files line by line
 [cpio]      Copy files to and from archives
@@ -33,31 +42,45 @@
 [df]        Display file system disk space usage
 [diff]      Compare files line by line
 [diff3]     Compare three files
+[dhclient]  Provides a means for configuring one or more network interfaces
 [du]        Estimate file and directory space usage
 [date]      Display or set the system date and time
 
 [echo]      Display a line of text
 [ed]        Line editor
 [expr]      Evaluate expressions
+[exit]      Exit the Shell
 
 [fg]        Bring jobs to the foreground
 [fgrep]     Search files for lines that match a fixed string
 [file]      Determine file type
 [find]      Search for files in a directory hierarchy
+[finger]    Display personal user finger information
 [fold]      Wrap each input line to fit in specified width
 [format]    Format disks
 [free]      Display the amount of free and used memory in the system
+[fsck]      Check and repair file system
+[ftp]       File transfer by "File Transfer Protocol"
 
 [grep]      Search for patterns in files
+[groups]    Display the group membership
+[groupadd]  Create a new group
+[groupmod]  Modify a group
+[groupdel]  Delete an existing group
 [gzip]      Compress or decompress files
 [gunzip]    Decompress files compressed by gzip
 
 [head]      Display the first few lines of a file
+[help]      Display help explanation of a command
 [history]   View command history
+[host]      Display remote hostname and IP
+[hostname]  Shows the current hostname
 
 [ifconfig]  Configure network interfaces
 [iptables]  Configure firewall rules
 [iconv]     Convert text from one character encoding to another
+[init]      Switch the system run level
+[info]      Display information for a command
 [install]   Copy files and set attributes
 
 [jobs]      List active jobs
@@ -70,32 +93,45 @@
 [ln]        Create links between files
 [ls]        List files and directories in the current directory
 [link]      Create a hard link to a file
+[loginname] Shows the login name
+[look]      Display words matching a given prefix
+[lpq]       Display the print queue
+[lpr]       Send a file to the printer
 [lsattr]    List file attributes on a Linux second extended file system
 [lsmod]     Show the status of modules in the Linux kernel
 [lsof]      List open files
 
 [man]       Display the manual page for a command
+[mesg]      Enable or Disable messaging
 [mkdir]     Create a new directory
 [mv]        Move or rename files or directories
+[mail]      Send and receive mails locally
 [man]       Format and display the manual pages
 [md5sum]    Calculate MD5 checksums
 [mktemp]    Create a temporary file or directory
+[mount]     Make a device available to the file system
 
 [netstat]   Display network connections and statistics
 [nano]      Simple text editor
 [nm]        List symbols from object files
+[nl]        Show numbers for each line of a file
 [nohup]     Run a command immune to hangups
+[nslookup]  Query internet name servers interactively for IP information
 
 [od]        Dump files in octal and other formats
+[open]      Connect to an ftp server
 
 [passwd]    Change user password
+[paste]     Merge two file contents and display
 [ps]        Display information about running processes
 [pwd]       Print the current working directory
 [ping]      Send ICMP ECHO_REQUEST to network hosts
 [pushd]     Save and change the current directory
 [popd]      Restore the previous value of the current directory
+[printenv]  List environment variable names and values
 
 [reboot]    Reboot the system
+[readlink]  Shows the target of Symbolic Link
 [rm]        Remove files or directories
 [rmdir]     Remove an empty directory
 [rsync]     Synchronize files and directories between locations
@@ -110,6 +146,7 @@
 [sh]        Shell command interpreter
 [split]     Split a file into pieces
 [ssh]       OpenSSH SSH client (remote login program)
+[stat]      Display the attributes of a file or directory
 
 [tail]      Display the last few lines of a file
 [tar]       Create or extract archive files
@@ -121,7 +158,10 @@
 
 [uname]     Display system information
 [uniq]      Report or omit repeated lines
+[unmount]   Make a device unavailable to file system
+[uptime]    Show system uptime
 [useradd]   Create a new user account
+[userdel]   Delete an existing user account
 [usermod]   Modify a user account
 
 [vi]        Text editor
@@ -131,7 +171,7 @@
 [watch]     Execute a program periodically
 [wc]        Print newline, word, and byte counts for files
 [wget]      Download files from the web
-[who]       Show who is logged on
+[whatis]    Display a description of what a command is
 [who]       Show who is logged on
 [whoami]    Display current user name
 
