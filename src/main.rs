@@ -48,8 +48,11 @@ fn handle_search_argument(needle: &str) {
             .filter(|line| line.to_lowercase().contains(&needle.to_lowercase()))
             .collect();
 
-        for line in found {
+        for line in &found {
             print_contents(line);
+        }
+        if &found.len() == &0 {
+            println!("No Command found");
         }
     }
 }
