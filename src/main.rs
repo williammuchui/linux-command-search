@@ -58,11 +58,16 @@ fn handle_search_exact_command(needle: &str) {
             .collect();
 
         if &found.len() == &0 {
-            println!("Command not Found");
+            println!("NO COMMAND FOUND");
             return;
         }
 
-        println!("MATCHING COMMANDS");
+        let total = found.len();
+        if total != 1 {
+            println!("{total} MATCHING COMMANDS");
+        } else {
+            println!("1 MATCHING COMMAND");
+        }
         for line in &found {
             print_contents(line);
         }
