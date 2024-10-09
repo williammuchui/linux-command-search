@@ -1,6 +1,7 @@
 [?]         A single character wildcard
 [*]         Any character pr set of characters wildcard
 [[ ]]       Any character in the set wildcard
+[$?]        Exit code of previous command
 [rwx]       Read, Write, Execute
 
 [alias]     Create command aliases
