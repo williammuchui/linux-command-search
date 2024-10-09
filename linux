@@ -4,6 +4,7 @@
 [$?]        Exit code of previous command
 [rwx]       Read, Write, Execute
 
+[a2p]       Translate awk to perl
 [alias]     Create command aliases
 [apt-get]   Package management for Debian-based systems
 [apropos]   Search manual pages for a keyword
@@ -16,26 +17,32 @@
 [bc]        An arbitrary precision calculator language
 [break]     Exit from a loop
 [bzip2]     Compress files using the Burrows-Wheeler block sorting text compression algorithm
+[bunzip2]   Uncompress a file from zip format
 
 [cal]       Display a calendar
 [cat]       Display the contents of a file
 [cd]        Change the current directory
-[chmod]     Change file permissions
-[chown]     Change file ownership
+[chattr]    Set attributes for a file
+[chmod]     Change file permission
+[chown*]    Change file ownership
+[chpasswd*]  Change password for users 
 [cp]        Copy files or directories
-[cron]      Schedule commands to run periodically
 [curl]      Transfer data from or to a server
 [cut]       Remove sections from each line of files
 [cal]       Display a calendar
 [case]      Execute commands based on matching patterns
 [chfn]      Change personal finger information
-[chgrp]     Change group ownership
-[chsh]      Change the login shell
+[chgrp*]     Change group ownership
+[chsh*]      Change the login shell
+[chkconfig*] View and modify run level file
 [cksum]     Print CRC checksum and byte counts
 [clear]     Clear the screen
 [cmp]       Compare two files byte by byte
 [comm]      Compare two sorted files line by line
 [cpio]      Copy files to and from archives
+[cron]      Schedule commands to run periodically
+[crontab]   Create a job to run at specified time
+[csplit]    Split a file into some separated files
 
 [date]      Display or set the system date and time
 [dc]        Desk calculator
@@ -43,61 +50,88 @@
 [df]        Display file system disk space usage
 [diff]      Compare files line by line
 [diff3]     Compare three files
+[dig]       Display the details of DNS servers
+[dircolors] Show color settings for "ls" command
+[dirname]   Remove the last part of a file path
 [dhclient]  Provides a means for configuring one or more network interfaces
 [du]        Estimate file and directory space usage
-[date]      Display or set the system date and time
+[dump]      Make backup for filesystem
 
 [echo]      Display a line of text
 [ed]        Line editor
+[egrep]     Search file(s) for specified regex
+[eject]     Eject or close the cd or dvd tray
+[emacs]     Powerful, extensible file editor
+[env]       Show, set environment variables
+[expand]    Convert tabs into spaces
+[eval]      Make a command from its arguments
 [expr]      Evaluate expressions
+[export]    Set an environment variable and value
 [exit]      Exit the Shell
 
+[factor]    Show prime factors of a  number
+[fc]        List, edit, re-execute last commands
+[fdisk*]    Manipulate hard disk patitions
+[fmt]       Format text files
 [fg]        Bring jobs to the foreground
 [fgrep]     Search files for lines that match a fixed string
 [file]      Determine file type
 [find]      Search for files in a directory hierarchy
 [finger]    Display personal user finger information
 [fold]      Wrap each input line to fit in specified width
+[for in]       Set conditional paremeter for loop
 [format]    Format disks
 [free]      Display the amount of free and used memory in the system
-[fsck]      Check and repair file system
+[fsck*]      Check and repair file system
 [ftp]       File transfer by "File Transfer Protocol"
 
+[gawk]      Find and replace text in a file
 [grep]      Search for patterns in files
 [groups]    Display the group membership
-[groupadd]  Create a new group
-[groupmod]  Modify a group
-[groupdel]  Delete an existing group
+[groupadd*] Create a new group
+[groupmod*] Modify a group
+[groupdel*] Delete an existing group
 [gzip]      Compress or decompress files
 [gunzip]    Decompress files compressed by gzip
 
+[halt]      Shutdown the system
+[hash]      Access the hash table
 [head]      Display the first few lines of a file
 [help]      Display help explanation of a command
 [history]   View command history
 [host]      Display remote hostname and IP
+[hostid]    Display the id of the current host in hex
 [hostname]  Shows the current hostname
 
+[id]        Show the user or group id number
 [ifconfig]  Configure network interfaces
 [iptables]  Configure firewall rules
 [iconv]     Convert text from one character encoding to another
-[init]      Switch the system run level
+[init*]      Switch the system run level
 [info]      Display information for a command
 [install]   Copy files and set attributes
 
 [jobs]      List active jobs
 [join]      Join lines of two files on a common field
 
-[kill]      Terminate a process
+[kill]      Terminate a process by pid
+[killall]   Kill a process by name
 
 [last]      Show listing of last logged in users
+[lastb]     Show bad login attempts
+[lastlog]   Display teh  last login information
 [less]      View file contents one page at a time
+[let]       Perform arithmetic on shell variables
 [ln]        Create links between files
 [ls]        List files and directories in the current directory
 [link]      Create a hard link to a file
-[loginname] Shows the login name
+[locate]    Find the location of a file or directory
+[logname]   Shows the login name
 [look]      Display words matching a given prefix
+[lpc]       Run the line printer control program
 [lpq]       Display the print queue
 [lpr]       Send a file to the printer
+[lprm]      Cancel printing job in printing queue
 [lsattr]    List file attributes on a Linux second extended file system
 [lsmod]     Show the status of modules in the Linux kernel
 [lsof]      List open files
@@ -105,15 +139,19 @@
 [man]       Display the manual page for a command
 [mesg]      Enable or Disable messaging
 [mkdir]     Create a new directory
+[mt]        Magnetic drive control
 [mv]        Move or rename files or directories
 [mail]      Send and receive mails locally
 [man]       Format and display the manual pages
 [md5sum]    Calculate MD5 checksums
 [mktemp]    Create a temporary file or directory
+[mknod]     Make a device file
 [mount]     Make a device available to the file system
+[more]      Show content one screen at a time
 
 [netstat]   Display network connections and statistics
 [nano]      Simple text editor
+[nice *]    Set priority level of a job
 [nm]        List symbols from object files
 [nl]        Show numbers for each line of a file
 [nohup]     Run a command immune to hangups
@@ -126,61 +164,104 @@
 [paste]     Merge two file contents and display
 [ps]        Display information about running processes
 [pwd]       Print the current working directory
+[pidof]     Show process ID of runnning program
 [ping]      Send ICMP ECHO_REQUEST to network hosts
 [pushd]     Save and change the current directory
 [popd]      Restore the previous value of the current directory
+[pkill]     Kill a running process
+[pr]        Prepare files for printing
 [printenv]  List environment variable names and values
+[printf]    Format and print data
+[pstree]    Display process in tree like structure
 
-[reboot]    Reboot the system
+[reboot *]  Reboot the system
+[rcp]       Remotely copy file between two hosts
+[renice *]  Change the priority level of a job
 [readlink]  Shows the target of Symbolic Link
+[restore]   Restore data from a backup file
+[rlogin]    Remotetly login to a system
 [rm]        Remove files or directories
 [rmdir]     Remove an empty directory
+[route]     Show or modify the IP routing table
 [rsync]     Synchronize files and directories between locations
 [read]      Read a line from standard input
 
 [scp]       Securely copy files between hosts
+[screen]    Open the terminal window manager
 [sed]       Stream editor for filtering and transforming text
-[shutdown]  Shutdown or restart the system
+[set]       Set shell variable of function
+[seq]       List sequent numbers in given range
+[sdiff]     Show two files differences side by side
+[sftp]      Securely transfer files by fpt
+[shutdown*] Shutdown or restart the system
 [sort]      Sort lines of text
 [su]        Switch user or become superuser
 [sudo]      Execute a command as another user, typically superuser
 [sh]        Shell command interpreter
+[sleep]     Pause for a specified amount of time
 [split]     Split a file into pieces
 [ssh]       OpenSSH SSH client (remote login program)
+[shopt]     Show the shell option settings
 [stat]      Display the attributes of a file or directory
+[sum]       Summarize a file with a checksum
+[suspend]   Suspend the working shell
+[sync]      synchronize disk data with memory
 
+[tac]       Display lines of a file in reverse order
 [tail]      Display the last few lines of a file
 [tar]       Create or extract archive files
 [tee]       Read from standard input and write to standard output and files
+[test]      Calculate a boolean expression
 [top]       Display and manage the top CPU processes
 [touch]     Create an empty file or update file timestamps
 [time]      Measure the time taken to execute a command
+[tload]     Show a graphical report of system load
 [tr]        Translate or delete characters
+[trap]      Run a command on receiving a terminal
+[tree]      List directory contents in tree format
+[traceroute*]Trace the route to a host
+[tty]       Show the name of the terminal device
+[type]      Detect a type of a command
 
+[ulimit]    Limit users resources
+[unalias]   Remove an alias
 [uname]     Display system information
-[uniq]      Report or omit repeated lines
+[unexpand]  Convert spaces into tabs
+[uniq]      Report or omit repeated lines in a file
 [unmount]   Make a device unavailable to file system
+[umask]     Show or set the file permission value
+[unset]     Remove shell variable or function
+[unzip]     Uncompress files from zip format
 [uptime]    Show system uptime
-[useradd]   Create a new user account
-[userdel]   Delete an existing user account
-[usermod]   Modify a user account
+[useradd*]  Create a new user account
+[userdel*]  Delete an existing user account
+[usermod*]  Modify a user account
+[users]     Display currently logged in users
 
+[vdir]      Verbosely show directory contents
 [vi]        Text editor
 [vim]       Improved version of the vi editor
+[vmstat]    Report virtual memory statistics
 
 [w]         Show who is logged on and what they are doing
+[wait]      Wait for a process to change state
 [watch]     Execute a program periodically
 [wc]        Print newline, word, and byte counts for files
 [wget]      Download files from the web
 [whatis]    Display a description of what a command is
+[which]     Show path of a executable command
 [who]       Show who is logged on
 [whoami]    Display current user name
 
 [xargs]     Build and execute command lines from standard input
+[xcalc]     Launch a graphical calculator
+[xclock]    Launch a graphical clock
 
+[yes]       Output a string repeatedly until killed
 [yum]       Package management for Red Hat-based systems
 
 [zip]       Package and compress (archive) files
 [zcat]      View compressed files
 [zgrep]     Search files in a compressed format
 [zless]     View compressed files with paging
+[zmore]     Show un/compressed file contents
