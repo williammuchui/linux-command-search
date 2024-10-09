@@ -18,6 +18,7 @@ fn main() {
 
 fn handle_list_argument() {
     if let Some(contents) = read_file(LINUX_FILE_PATH) {
+        println!("(*) MEANS THE COMMAND RUN BY ROOT USER");
         print_contents(&contents);
     }
 }
@@ -65,8 +66,10 @@ fn handle_search_exact_command(needle: &str) {
         let total = found.len();
         if total != 1 {
             println!("{total} MATCHING COMMANDS");
+            println!("(*) MEANS THE COMMAND RUN BY ROOT USER");
         } else {
             println!("1 MATCHING COMMAND");
+            println!("(*) MEANS THE COMMAND RUN BY ROOT USER");
         }
         for line in &found {
             print_contents(line);
