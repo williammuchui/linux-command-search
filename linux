@@ -119,7 +119,7 @@
 
 [last]      Show listing of last logged in users
 [lastb]     Show bad login attempts
-[lastlog]   Display teh  last login information
+[lastlog]   Display the  last login information
 [less]      View file contents one page at a time
 [let]       Perform arithmetic on shell variables
 [ln]        Create links between files
