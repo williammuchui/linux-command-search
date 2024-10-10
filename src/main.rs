@@ -6,6 +6,7 @@ use std::process::exit;
 const LINUX_FILE_PATH: &str = "linux";
 
 fn main() {
+    draw_commands_ascii();
     let arguments: Vec<String> = args().collect();
     match arguments.as_slice() {
         [_] => handle_list_argument(),
@@ -91,4 +92,19 @@ fn exit_with_error(e: &str) {
 
 fn print_contents(contents: &str) {
     println!("{}", contents);
+}
+
+fn draw_commands_ascii() {
+    let text = "
+
+ ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗
+██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝
+██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║███████╗
+██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║╚════██║
+╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║██████╔╝███████║
+ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝
+                                                                         
+
+";
+    println!("{}", text);
 }
