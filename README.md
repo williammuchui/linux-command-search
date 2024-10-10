@@ -1,5 +1,12 @@
 # Commands
 
+██████╗ ██████╗ ███╗ ███╗███╗ ███╗ █████╗ ███╗ ██╗██████╗ ███████╗
+██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗ ██║██╔══██╗██╔════╝
+██║ ██║ ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║ ██║███████╗
+██║ ██║ ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║ ██║╚════██║
+╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║ ██║██║ ╚████║██████╔╝███████║
+╚═════╝ ╚═════╝ ╚═╝ ╚═╝╚═╝ ╚═╝╚═╝ ╚═╝╚═╝ ╚═══╝╚═════╝ ╚══════╝
+
 Commands is a simple command-line tool that lists all available Linux commands
 directly in your terminal. It's designed to help users quickly discover and
 explore the commands they can use in their Linux environment.
