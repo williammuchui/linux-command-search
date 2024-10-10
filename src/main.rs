@@ -23,6 +23,14 @@ fn handle_list_argument() {
         print_contents(&contents);
     }
 }
+fn read_from_json_file(filepath: &str) -> Option<String> {
+    let data = read_file(filepath).unwrap();
+
+    match serde_json::from_str(&data) {
+        Ok(commands) => Some(commands),
+        Err(_) => None,
+    }
+}
 
 fn read_file(filepath: &str) -> Option<String> {
     let mut file = match File::open(filepath) {
