@@ -2,7 +2,7 @@ use std::env::{args, var};
 use std::fs::File;
 use std::io::{self as std_io, Read};
 use std::path::PathBuf;
-use std::process::exit;
+use std::process::{exit, Command};
 use term_size::dimensions;
 
 fn main() {
@@ -74,7 +74,7 @@ fn handle_search_exact_command(needle: &str) {
             .filter(|line| line.to_lowercase().contains(&needle.to_lowercase()))
             .collect();
         if found.is_empty() {
-            println!("NO COMMAND FOUND");
+            scrap_man(needle);
             return;
         }
         let total = found.len();
@@ -125,4 +125,30 @@ fn draw_commands_ascii() {
                                                                          
 ";
     println!("{}", text);
+}
+
+fn scrap_man(unknown_command: &str) {
+    let man_output = Command::new("man")
+        .arg(unknown_command)
+        .output()
+        .expect("man command failed to start. Is it installed?");
+    let man_result =
+        String::from_utf8(man_output.stdout).unwrap_or(String::from("Failed to decode"));
+    let mut a = [0, 0];
+    a[0] = man_result
+        .split('\n')
+        .into_iter()
+        .position(|el| (el == "\u{1b}[1mNAME\u{1b}[0m") || (el == "\u{1b}[1mName\u{1b}[0m"))
+        .unwrap();
+    a[1] = man_result
+        .split('\n')
+        .into_iter()
+        .position(|el| (el == "\u{1b}[1mSYNOPSIS\u{1b}[0m") || (el == "\u{1b}[1mSynopsis\u{1b}[0m"))
+        .unwrap();
+
+    let command_description: String = man_result.split('\n').collect::<Vec<&str>>()[a[0] + 1..a[1]]
+        .iter()
+        .map(|s| s.to_string())
+        .collect();
+    println!("{}", command_description.trim());
 }
