@@ -151,6 +151,7 @@
 
 [netstat]   Display network connections and statistics
 [nano]      Simple text editor
+[nc]        Arbitrary TCP and UDP connections and listens
 [nice *]    Set priority level of a job
 [nm]        List symbols from object files
 [nl]        Show numbers for each line of a file
