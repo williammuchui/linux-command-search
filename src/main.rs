@@ -1,10 +1,9 @@
-use std::env::args;
+use std::env::{args, var};
 use std::fs::File;
 use std::io::{self as std_io, Read};
+use std::path::PathBuf;
 use std::process::exit;
 use term_size::dimensions;
-
-const LINUX_FILE_PATH: &str = "linux";
 
 fn main() {
     draw_commands_ascii();
@@ -19,7 +18,8 @@ fn main() {
 }
 
 fn handle_list_argument() {
-    if let Some(contents) = read_file(LINUX_FILE_PATH) {
+    let filepath = get_file_path();
+    if let Some(contents) = read_file(&filepath) {
         let lines: Vec<&str> = contents.lines().collect();
         gradual_print(&lines);
     } else {
@@ -67,7 +67,8 @@ fn gradual_print(lines: &[&str]) {
 }
 
 fn handle_search_exact_command(needle: &str) {
-    if let Some(haystack) = read_file(LINUX_FILE_PATH) {
+    let filepath = get_file_path();
+    if let Some(haystack) = read_file(&filepath) {
         let found: Vec<&str> = haystack
             .lines()
             .filter(|line| line.to_lowercase().contains(&needle.to_lowercase()))
@@ -87,6 +88,13 @@ fn handle_search_exact_command(needle: &str) {
             print_contents(line);
         }
     }
+}
+
+fn get_file_path() -> String {
+    let home_dir = var("HOME").unwrap_or_else(|_| String::from("."));
+    let mut path = PathBuf::from(home_dir);
+    path.push(".commands/linux");
+    path.to_str().unwrap().to_string()
 }
 
 fn print_help() {

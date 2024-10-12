@@ -1,7 +1,7 @@
 # Commands
 
 ```
- ██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗
+██████╗ ██████╗ ███╗   ███╗███╗   ███╗ █████╗ ███╗   ██╗██████╗ ███████╗
 ██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝
 ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██╔██╗ ██║██║  ██║███████╗
 ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║  ██║╚════██║
@@ -18,6 +18,7 @@ and explore the commands they can use in their Linux environment.
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Makefile](#makefile)
 - [Customization](#customization)
 - [Contributing](#contributing)
 - [License](#license)
@@ -39,23 +40,23 @@ and explore the commands they can use in their Linux environment.
 
 1. Clone the repository:
 
-   ```
-   git clone https://github.com/williammuchui/linux-command-search.git
-   ```
+```
+git clone https://github.com/williammuchui/linux-command-search.git
+```
 
 2. Navigate to the project directory:
 
-   ```
-   cd linux-command-search
-   ```
+```
+cd linux-command-search
+```
 
-3. Build the project:
+3. Use the Makefile to build and install the project (see [Makefile](#makefile) section for more details):
 
-   ```
-   cargo build --release
-   ```
+```
+make install
+```
 
-4. The binary will be available in `target/release/commands`
+4. Follow the instructions provided after installation to update your PATH.
 
 ## Usage
 
@@ -63,42 +64,42 @@ To use the Commands tool:
 
 1. List all available commands:
 
-   ```bash
-   commands
-   ```
+```bash
+commands
+```
 
-   or
+or
 
-   ```bash
-   commands -l
-   ```
+```bash
+commands -l
+```
 
-   or
+or
 
-   ```bash
-   commands --list
-   ```
+```bash
+commands --list
+```
 
 2. Search for a specific command:
 
-   ```bash
-   commands -s <search_term>
-   ```
+```bash
+commands -s <search_term>
+```
 
-   or
+or
 
-   ```bash
-   commands --search <search_term>
-   ```
+```bash
+commands --search <search_term>
+```
 
 3. Display help information:
-   ```bash
-   commands -h
-   ```
-   or
-   ```bash
-   commands --help
-   ```
+```bash
+commands -h
+```
+or
+```bash
+commands --help
+```
 
 ### Example Output
 
@@ -109,6 +110,23 @@ Available Linux Commands:
 3. cp - Copy files and directories
 ...
 ```
+
+## Makefile
+
+The project includes a Makefile to simplify the build and installation process. Here are the available commands:
+
+- `make build`: Compiles the project
+- `make install`: Installs the project to ~/.commands and provides instructions for updating PATH
+- `make clean`: Removes build files
+- `make help`: Shows the help message with available commands
+
+To install the project, run:
+
+```
+make install
+```
+
+After installation, follow the instructions provided to add the installation directory to your PATH. You'll need to add a line to your shell configuration file (.bashrc, .bash_profile, or .zshrc) and then either source the file or restart your terminal for the changes to take effect.
 
 ## Customization
 
@@ -132,4 +150,3 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
