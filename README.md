@@ -116,7 +116,7 @@ Available Linux Commands:
 The project includes a Makefile to simplify the build and installation process. Here are the available commands:
 
 - `make build`: Compiles the project
-- `make install`: Installs the project to ~/.commands and provides instructions for updating PATH
+- `make install`: Installs the project to ~/commands and provides instructions for updating PATH
 - `make clean`: Removes build files
 - `make help`: Shows the help message with available commands
 
@@ -133,7 +133,7 @@ After installation, follow the instructions provided to add the installation dir
 You can easily add or modify commands by editing the `linux` file in the project root. Each line should follow this format:
 
 ```
-command_name - Command description
+[command_name]  Command description
 ```
 
 ## Contributing
