@@ -47,7 +47,7 @@ fn read_file(filepath: &str) -> Option<String> {
 
 fn gradual_print(lines: &[&str]) {
     let (_width, height) = dimensions().unwrap_or((80, 20)); // Fallback to 80x20
-    let max_lines = height - 10; // Reserve space for user input
+    let max_lines = height - 1; // Reserve space for user input
     let mut index = 0;
     while index < lines.len() {
         for i in index..(index + max_lines).min(lines.len()) {
