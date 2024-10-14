@@ -27,19 +27,25 @@ fn handle_list_argument() {
     }
 }
 
+fn get_file_path() -> String {
+    let home_dir = var("HOME").unwrap_or_else(|_| String::from("."));
+    let mut path = PathBuf::from(home_dir);
+    path.push("commands/linux");
+    path.to_str().unwrap().to_string()
+}
+
 fn read_file(filepath: &str) -> Option<String> {
-    let mut file = match File::open(filepath) {
-        Ok(f) => f,
+    match File::open(filepath) {
+        Ok(mut file) => {
+            let mut contents = String::new();
+            if let Err(e) = file.read_to_string(&mut contents) {
+                exit_with_error(&format!("Failed to read the file: {}", e));
+                return None; // This line won't be reached, but is needed to satisfy the return type.
+            }
+            Some(contents)
+        }
         Err(e) => {
             exit_with_error(&format!("Error opening file: {}", e));
-            return None;
-        }
-    };
-    let mut contents = String::new();
-    match file.read_to_string(&mut contents) {
-        Ok(_) => Some(contents),
-        Err(e) => {
-            exit_with_error(&format!("Error Reading file: {}", e));
             None
         }
     }
@@ -88,13 +94,6 @@ fn handle_search_exact_command(needle: &str) {
             print_contents(line);
         }
     }
-}
-
-fn get_file_path() -> String {
-    let home_dir = var("HOME").unwrap_or_else(|_| String::from("."));
-    let mut path = PathBuf::from(home_dir);
-    path.push("commands/linux");
-    path.to_str().unwrap().to_string()
 }
 
 fn print_help() {
